@@ -1,0 +1,13 @@
+- hangman Harry potter theme
+- make array of the words
+- the letters showing in a grid
+- array for alphabets
+- array for the words 
+- function finding the correct letter by the value of the index
+
+
+
+- Uizard to design the layout
+
+#html
+- header: 

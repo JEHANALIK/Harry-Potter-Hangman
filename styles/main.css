@@ -1,0 +1,219 @@
+html {
+  width: 100%;
+}
+* {
+  font-family: "harry_pregular";
+  background-color: black;
+  color: aliceblue;
+}
+/* ---------------------------------header---------------------------------  */
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+h1 {
+  color: #946b2d;
+  text-align: center;
+  font-size: 65px;
+  margin: 0 auto;
+  font-weight: lighter;
+}
+.nav img {
+  background-color: rgba(0, 0, 0, 0.226);
+  position: relative;
+  /* margin-left: 20px; */
+  margin-top: 5px;
+}
+
+/* ------------------------------categories--------------------------------- */
+.categories {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18vh;
+  margin-left: 80vh;
+  width: 300px;
+  color: white;
+}
+.categories button {
+  color: #946b2d;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  /* color: white; */
+  cursor: pointer;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px; /* cheated from goolge :) */
+  transform: translateX(2em);
+}
+/* ---------------------------------dash--------------------------------- */
+.showDash {
+  position: absolute;
+  align-items: center;
+  margin-left: 80vh;
+  margin-top: -30vh;
+  font-size: 30px;
+  width: 60vh;
+  color: hsl(359, 96%, 19%);
+}
+
+/* ---------------------------------Alphabets--------------------------------- */
+.letters {
+  display: flex;
+  flex-wrap: wrap;
+  width: 580px;
+  justify-content: center;
+  position: relative;
+  margin-top: 45vh;
+  align-items: center;
+  margin-left: 60vh;
+}
+.letters button {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  /* color: white; */
+  color: #946b2d;
+  /* color: hsl(359, 96%, 19%); */
+  cursor: pointer;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px; /* cheated from goolge :) */
+  font-size: 20px;
+  margin: 5px;
+  align-items: center;
+  text-align: center;
+}
+.letters button:active {
+  transform: translateX(2px);
+}
+.clicked {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+/* ---------------------------------win and losing pop up--------------------------------- */
+.close {
+  float: right;
+  position: relative;
+  margin-top: 1px;
+  margin-left: 3px;
+}
+.popup {
+  margin: 100px auto;
+  margin-top: 30vh;
+  padding: 20px;
+  background: black;
+  /* border-radius: 5px; */
+  width: 30%;
+  height: 30%;
+  position: relative;
+  /* transition: all 10s ease-in-out; */
+  border: 1px solid white;
+}
+.popup h2 {
+  margin-top: 10px;
+  color: white;
+  text-align: center;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+}
+.popup .close:hover {
+  color: red;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+}
+/* These are the rules you are looking for. */
+.overlay {
+  transition: opacity 500ms;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.overlay:target {
+  opacity: 0;
+  pointer-events: none;
+}
+i {
+  background-color: white;
+  color: aliceblue;
+}
+.playStop {
+  display: flex;
+  position: relative;
+  float: left;
+  margin-top: 5vh;
+  align-items: center;
+  justify-content: space-around;
+  width: 90px;
+  margin-left: 22px;
+}
+.playStop img {
+  width: 35px;
+}
+#stopTheme img {
+  width: 60px;
+}
+/* hangman */
+.hangman {
+  position: absolute;
+  margin-left: 10vh;
+}
+.hangman img {
+  /* position: relative; */
+  width: 20vw;
+}
+.body img {
+  position: absolute;
+  margin-top: 30vh;
+  background-color: rgba(0, 4, 7, 0.015);
+}
+.noFace img,
+.head img,
+.left img,
+.right img,
+.mouth img {
+  position: absolute;
+  margin-top: 12vh;
+  margin-left: 3vw;
+}
+.startGame {
+  position: absolute;
+  margin-left: 95vh;
+  margin-top: 5vh;
+  width: 300px;
+}
+.startGame button {
+  padding-left: 10px;
+  padding-right: 10px;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px; /* cheated from goolge :) */
+  font-size: 20px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  color: hsl(359, 96%, 19%);
+}
