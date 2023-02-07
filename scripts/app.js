@@ -84,19 +84,23 @@ function init() {
     // charactersBtn.disabled = false;
     showDash.innerHTML = spellJoin;
   }
-  let guess = [];
+  //let guess = [];
   spellsBtn.addEventListener("click", generateSpells);
   //const dash = document.createElement("div");
   function compareLetter(letterC) {
-    spellChars.forEach((array, key) => {
-      if (spellChars[key] == letterC) {
-        guess[key] = letterC;
-        return guess[key];
+    spellChars.forEach((char, key) => {
+      if (char == letterC) {
+        // guess;
+        //spellJoin[key].pop();
+        spellDash[key] = letterC;
+        return spellDash[key];
       }
-      showDash.innerHTML = guess;
     });
+    showDash.innerHTML = spellDash;
     console.log("checj");
-    console.log(guess);
+    //console.log(guess);
+    console.log(spellDash);
+    console.log(showDash.innerHTML);
   }
 
   //   for (let i = 0; spellChars.length; i++) {
