@@ -48,10 +48,17 @@ h1 {
   cursor: pointer;
   border: 1px solid;
   padding: 10px;
-  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+  box-shadow: /*1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px,*/ 4px 4px 0px
+      0px,
     5px 5px 0px 0px; /* cheated from goolge :) */
   transform: translateX(2em);
 }
+
+.categoriesClicked {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
 /* ---------------------------------dash--------------------------------- */
 .showDash {
   position: absolute;
@@ -97,8 +104,11 @@ h1 {
 }
 .clicked {
   opacity: 0.6;
-  cursor: not-allowed;
 }
+.letter.stop {
+  pointer-events: none;
+}
+
 /* ---------------------------------win and losing pop up--------------------------------- */
 .close {
   float: right;
@@ -119,8 +129,8 @@ h1 {
   border: 1px solid white;
 }
 .popup h2 {
-  margin-top: 10px;
-  color: white;
+  margin-top: 42px;
+  color: hsl(359, 96%, 19%);
   text-align: center;
 }
 .popup .close {
@@ -138,6 +148,7 @@ h1 {
 .popup .content {
   max-height: 30%;
   overflow: auto;
+  text-align: center;
 }
 .overlay {
   position: absolute;
@@ -191,15 +202,32 @@ i {
   position: absolute;
   margin-top: 30vh;
   background-color: rgba(0, 4, 7, 0.015);
+  display: none;
 }
 .noFace img,
-.head img,
+/* .head img, */
 .left img,
 .right img,
 .mouth img {
   position: absolute;
   margin-top: 12vh;
   margin-left: 3vw;
+  display: none;
+}
+.hangman.letter-1 .noFace img {
+  display: block;
+}
+.hangman.letter-2 .left img {
+  display: block;
+}
+.hangman.letter-3 .right img {
+  display: block;
+}
+.hangman.letter-4 .mouth img {
+  display: block;
+}
+.hangman.letter-5 .body img {
+  display: block;
 }
 .startGame {
   position: absolute;

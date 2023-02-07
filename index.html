@@ -39,19 +39,23 @@
     <!-- ---------------------------------voldomort hangman--------------------------------- -->
     <div class="hangman">
       <div class="noFace">
-        <img src="/pictures/voldomort/1-noFace.PNG" alt="" />
+        <img id="hangmanNoFace" src="/pictures/voldomort/1-noFace.PNG" alt="" />
       </div>
       <div class="right">
-        <img src="/pictures/voldomort/3-right.PNG" alt="" />
+        <img id="hangmanRight" src="/pictures/voldomort/3-right.PNG" alt="" />
       </div>
       <div class="left">
-        <img src="/pictures/voldomort/2-left.PNG" alt="" />
+        <img id="hangmanLeft" src="/pictures/voldomort/2-left.PNG" alt="" />
       </div>
       <div class="mouth">
-        <img src="/pictures/voldomort/4-mouth.PNG" alt="" />
+        <img id="hangmanMouth" src="/pictures/voldomort/4-mouth.PNG" alt="" />
       </div>
       <div class="body">
-        <img src="/pictures/voldomort/5-body-removebg-preview.png" alt="" />
+        <img
+          id="hangmanBody"
+          src="/pictures/voldomort/5-body-removebg-preview.png"
+          alt=""
+        />
       </div>
     </div>
     <!----------------------------------- alphabets ----------------------------------->
@@ -102,10 +106,10 @@
 
     <div id="popup1" class="overlay">
       <div class="popup">
-        <h2>You won!</h2>
+        <h2 id="endText"></h2>
         <!-- This hides it. -->
         <a class="close" href="#popup1">×</a>
-        <div class="content">The word is <span></span></div>
+        <div class="content">THE WORD IS</div>
       </div>
     </div>
     <!------------------------------ audio theme ----------------------------->
@@ -114,5 +118,6 @@
       <div id="playTheme"><img src="/pictures/speaker.png" alt="" /></div>
       <div id="stopTheme"><img src="/pictures/mute.jpg" alt="" /></div>
     </div>
+    <audio id="wrong" src="wronganswer.mp3" preload="auto"></audio>
   </body>
 </html>
