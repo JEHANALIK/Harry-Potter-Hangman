@@ -6,6 +6,8 @@ function init() {
   const spellsBtn = document.querySelector("#spellsBtn");
   const charactersBtn = document.querySelector("#charactersBtn");
   const objectsBtn = document.querySelector("#objectsBtn");
+  const start = document.querySelector("#start");
+  const reset = document.querySelector("#reset");
 
   // function handleClick(event) {
   document.addEventListener("click", (event) => {
@@ -51,50 +53,86 @@ function init() {
   // ---------------------------------generate Random spells-----------------------------
   let spellChars = [];
   let spellDash = [];
+  let spellJoin = [];
   function generateSpells() {
     var randomSpells = spells[Math.floor(Math.random() * spells.length)];
+    spellChars = randomSpells.split(""); //
+    spellDash = Array(randomSpells.length).fill("_");
+    spellJoin = spellDash.join(" ");
+    console.log(spellChars);
+    console.log(spellJoin);
+    console.log("dashh");
+
     // var x = "";
 
-    for (let i = 0; i < randomSpells.length; i++) {
-      spellChars[i] = randomSpells[i];
-      // let spellChars = randomSpells.charAt(i).toUpperCase();
-      //spellChars.toUpperCase();
-      /// spellDash[i] = "_";
-      //x = x + " " + s;
-      //console.log(spellChars);
-    }
+    // for (let i = 0; i < randomSpells.length; i++) {
+    //   spellChars[i] = randomSpells[i];
+
+    //   spellDash[i] = spellChars[i].replace(/[A-Z]/, "_");
+    //   showDash.innerHTML = spellDash.join("");
+    //   // let spellChars = randomSpells.charAt(i).toUpperCase();
+    //   //spellChars.toUpperCase();
+    //   /// spellDash[i] = "_";
+    //   //x = x + " " + s;
+    //   //console.log(spellChars);
+    // }
     // console.log(spellDash);
-    console.log(spellChars);
+    // console.log(spellChars);
 
     // spellsBtn.disabled = true;
     // objectsBtn.disabled = false;
     // charactersBtn.disabled = false;
-    showDash.innerHTML = spellDash;
+    showDash.innerHTML = spellJoin;
   }
+  let guess = [];
   spellsBtn.addEventListener("click", generateSpells);
+  //const dash = document.createElement("div");
   function compareLetter(letterC) {
-    console.log("checj");
-    console.log(letterC);
-    spellChars.forEach((event) => {
-      const dash = document.createElement("div");
-      dash.innerHTML = "-";
-      //const check = event.textContent;
-
-      //  event.addEventListener("click", () => {
-      for (let i = 0; i < spellChars.length; i++) {
-        showDash.appendChild(dash);
-        if (spellChars[i].includes(letterC)) {
-          // spellDash[i] = letterC;
-          // dash.innerHTML =dash.substring(0, i) + letterC + dash.substring(i + 1);
-          //  dash.innerHTML = letterC;
-          console.log(letterC);
-
-          console.log("check");
-        }
+    spellChars.forEach((array, key) => {
+      if (spellChars[key] == letterC) {
+        guess[key] = letterC;
+        return guess[key];
       }
+      showDash.innerHTML = guess;
     });
-    //});
+    console.log("checj");
+    console.log(guess);
   }
+
+  //   for (let i = 0; spellChars.length; i++) {
+  //     if (spellChars[i] == letterC) {
+  //       guess[i] = letterC;
+  //     }
+  //   }
+  // }
+  // spellChars.forEach((event, key) => {
+  //   if (event[key] === letterC) {
+
+  //     // spellJoin.innerHTML = letterC;
+  //     showDash.innerHTML = spellChars[key];
+  //   }
+  // const dash = document.createElement("div");
+  // //dash.classList.add("addDash");
+  // dash.innerHTML = letterC;
+  //const check = event.textContent;
+
+  //  event.addEventListener("click", () => {
+  // for (let i = 0; i < spellChars.length; i++) {
+  //   // showDash.appendChild(dash);
+  //   if (spellChars[i] == letterC) {
+  //     showDash.appendChild(dash);
+
+  //     // spellDash[i] = letterC;
+  //     // dash.innerHTML =dash.substring(0, i) + letterC + dash.substring(i + 1);
+  //     //  dash.innerHTML = letterC;
+  //     console.log(letterC);
+
+  //     console.log("check");
+  //   }
+  // }
+  //  });
+  //});
+  // }
 
   // ---------------------------------generate random chracters----------------------------
   function generateCharacters() {
