@@ -60,19 +60,23 @@ function init() {
 
   // ---------------------------------output dashes----------------------------------
   spellsBtn.addEventListener("click", generateSpells);
-
+  let checkArray = [];
   function compareLetter(letterC) {
     spellChars.forEach((char, key) => {
       if (char == letterC) {
         status = true;
         spellDash[key] = letterC;
+        checkArray.push(letterC);
         return spellDash[key];
       }
     });
+
     showDash.innerHTML = spellDash.join(" "); //output the correct selected letter to the dash
-    console.log("check");
-    console.log(spellDash);
-    console.log(showDash.innerHTML);
+    console.log("spellChars");
+    console.log(spellChars);
+    console.log("check array");
+    console.log(checkArray);
+    //console.log(showDash.innerHTML);
     console.log(status);
     if (status != true) {
       wrongLetters++;
@@ -80,6 +84,8 @@ function init() {
       document.querySelector("#wrong").play();
       if (wrongLetters === 5) {
         gameOver();
+      } else if (spellChars.length == checkArray.length) {
+        win();
       }
     }
   }
