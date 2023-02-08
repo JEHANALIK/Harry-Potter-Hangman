@@ -40,7 +40,7 @@ h1 {
 }
 .categories button {
   color: #946b2d;
-  font-size: 14px;
+  font-size: 17px;
   letter-spacing: 2px;
   text-decoration: none;
   text-transform: uppercase;
@@ -48,6 +48,7 @@ h1 {
   cursor: pointer;
   border: 1px solid;
   padding: 10px;
+  width: 290px;
   box-shadow: /*1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px,*/ 4px 4px 0px
       0px,
     5px 5px 0px 0px; /* cheated from goolge :) */
@@ -103,7 +104,13 @@ h1 {
   transform: translateX(2px);
 }
 .clicked {
-  opacity: 0.6;
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.clickOnreset {
+  opacity: 1;
+  cursor: pointer;
 }
 .letter.stop {
   pointer-events: none;
@@ -156,7 +163,7 @@ h1 {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.6);
 }
 /* These are the rules you are looking for. */
 .overlay {
@@ -189,6 +196,9 @@ i {
 #stopTheme img {
   width: 60px;
 }
+.hideHangman {
+  display: none;
+}
 /* hangman */
 .hangman {
   position: absolute;
@@ -206,7 +216,7 @@ i {
 }
 .noFace img,
 /* .head img, */
-.left img,
+.left img, 
 .right img,
 .mouth img {
   position: absolute;
@@ -214,19 +224,27 @@ i {
   margin-left: 3vw;
   display: none;
 }
-.hangman.letter-1 .noFace img {
+/* .hangman {
+  display: none;
+} */
+/* .left img {
+  position: absolute;
+  margin-: 18px;
+  display: none;
+} */
+.letter-1 .noFace img {
   display: block;
 }
-.hangman.letter-2 .left img {
+.letter-2 .left img {
   display: block;
 }
-.hangman.letter-3 .right img {
+.letter-3 .right img {
   display: block;
 }
-.hangman.letter-4 .mouth img {
+.letter-4 .mouth img {
   display: block;
 }
-.hangman.letter-5 .body img {
+.letter-5 .body img {
   display: block;
 }
 .startGame {
@@ -236,12 +254,13 @@ i {
   width: 300px;
 }
 .startGame button {
-  padding-left: 10px;
+  display: none;
+  /* padding-left: 10px;
   padding-right: 10px;
   box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
-    5px 5px 0px 0px; /* cheated from goolge :) */
+    5px 5px 0px 0px; /* cheated from goolge :) 
   font-size: 20px;
   letter-spacing: 2px;
   cursor: pointer;
-  color: hsl(359, 96%, 19%);
+  color: hsl(359, 96%, 19%); */
 }
