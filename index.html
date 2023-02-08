@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/main.css" />
-
     <link
       rel="stylesheet"
       href="/fonts/webfontkit-20230202-100715/stylesheet.css"
@@ -14,30 +13,23 @@
     <title>HarryHangy</title>
   </head>
   <body>
-    <!-- ---------------------------------The title--------------------------------- -->
+    <!-- ---------------------------------The title---------------------------------->
     <div class="nav">
       <img
         src="/pictures/harryPotter - Copy.jpg"
         width="150px"
         alt="Hogworts"
       />
-
       <h1>Harry Potter</h1>
       <img src="/pictures/harryPotter.jpg" width="150px" alt="" />
     </div>
-
     <!-- ---------------------------------The Categories--------------------------------- -->
     <div class="categories">
       <button type="button" class="categoriesBtn" id="spellsBtn">
         Guess the word🧙‍♂️🪄
       </button>
-      <!-- <button type="button" class="categoriesBtn" id="charactersBtn"> -->
-      <!-- Characters -->
-      <!-- </button> -->
-      <!-- <button type="button" class="categoriesBtn" id="objectsBtn"> -->
-      <!-- Objects -->
-      <!-- </button> -->
     </div>
+    <h4 id="lives"></h4>
     <!-- ---------------------------------voldomort hangman--------------------------------- -->
     <div class="hangman">
       <div class="noFace">
@@ -49,64 +41,51 @@
       <div class="right">
         <img id="hangmanRight" src="/pictures/voldomort/3-right.PNG" alt="" />
       </div>
-
       <div class="mouth">
         <img id="hangmanMouth" src="/pictures/voldomort/4-mouth.PNG" alt="" />
       </div>
       <div class="body">
-        <img
-          id="hangmanBody"
-          src="/pictures/voldomort/hajer-edit-body.png"
-          alt=""
-        />
+        <img id="hangmanBody" src="/pictures/voldomort/body.png" alt="" />
       </div>
     </div>
     <!----------------------------------- alphabets ----------------------------------->
     <div class="letters">
-      <button class="letterBtn" id="0" value="A">A</button>
-      <button class="letterBtn" id="1" value="B">B</button>
-      <button class="letterBtn" id="2" value="C">C</button>
-      <button class="letterBtn" id="3" value="D">D</button>
-      <button class="letterBtn" id="4" value="E">E</button>
-      <button class="letterBtn" id="5" value="F">F</button>
-      <button class="letterBtn" id="6" value="G">G</button>
-      <button class="letterBtn" id="7" value="H">H</button>
-      <button class="letterBtn" id="8" value="I">I</button>
-      <button class="letterBtn" id="9" value="J">J</button>
-      <button class="letterBtn" id="10" value="K">K</button>
-      <button class="letterBtn" id="11" value="L">L</button>
-      <button class="letterBtn" id="12" value="M">M</button>
-      <button class="letterBtn" id="13" value="N">N</button>
-      <button class="letterBtn" id="14" value="O">O</button>
-      <button class="letterBtn" id="15" value="P">P</button>
-      <button class="letterBtn" id="16" value="Q">Q</button>
-      <button class="letterBtn" id="17" value="R">R</button>
-      <button class="letterBtn" id="18" value="S">S</button>
-      <button class="letterBtn" id="19" value="T">T</button>
-      <button class="letterBtn" id="20" value="U">U</button>
-      <button class="letterBtn" id="21" value="V">V</button>
-      <button class="letterBtn" id="22" value="W">W</button>
-      <button class="letterBtn" id="23" value="X">X</button>
-      <button class="letterBtn" id="24" value="Y">Y</button>
-      <button class="letterBtn" id="25" value="Z">Z</button>
+      <button class="letterBtn">A</button>
+      <button class="letterBtn">B</button>
+      <button class="letterBtn">C</button>
+      <button class="letterBtn">D</button>
+      <button class="letterBtn">E</button>
+      <button class="letterBtn">F</button>
+      <button class="letterBtn">G</button>
+      <button class="letterBtn">H</button>
+      <button class="letterBtn">I</button>
+      <button class="letterBtn">J</button>
+      <button class="letterBtn">K</button>
+      <button class="letterBtn">L</button>
+      <button class="letterBtn">M</button>
+      <button class="letterBtn">N</button>
+      <button class="letterBtn">O</button>
+      <button class="letterBtn">P</button>
+      <button class="letterBtn">Q</button>
+      <button class="letterBtn">R</button>
+      <button class="letterBtn">S</button>
+      <button class="letterBtn">T</button>
+      <button class="letterBtn">U</button>
+      <button class="letterBtn">V</button>
+      <button class="letterBtn">W</button>
+      <button class="letterBtn">X</button>
+      <button class="letterBtn">Y</button>
+      <button class="letterBtn">Z</button>
     </div>
     <!----------------------------------- show dashes ----------------------------------->
     <div class="showDash">
       <div class="dash"></div>
     </div>
-
     <!------------------------------ play and reset----------------------------->
     <div class="startGame">
-      <!-- <button id="start">Play</button> -->
       <button id="reset"></button>
     </div>
-
     <!------------------------------ pop up if you win or lose----------------------------->
-    <!-- <div class="box">
-       This shows the popup
-      <a class="button" href="#popup">Let me Pop up</a>
-    </div> -->
-
     <div id="popup1" class="overlay">
       <div class="popup">
         <h2 id="endText"></h2>
@@ -121,6 +100,6 @@
       <div id="playTheme"><img src="/pictures/speaker.png" alt="" /></div>
       <div id="stopTheme"><img src="/pictures/mute.jpg" alt="" /></div>
     </div>
-    <audio id="wrong" src="wronganswer.mp3" preload="auto"></audio>
+    <audio id="wrong" src="/sounds/wronganswer.mp3" preload="auto"></audio>
   </body>
 </html>

@@ -4,20 +4,16 @@ function init() {
   const playTheme = document.querySelector("#playTheme");
   const showDash = document.querySelector(".showDash");
   const spellsBtn = document.querySelector("#spellsBtn");
-  // const charactersBtn = document.querySelector("#charactersBtn");
-  //const objectsBtn = document.querySelector("#objectsBtn");
-  const start = document.querySelector("#start");
   const reset = document.querySelector("#reset");
   const hangman = document.querySelector(".hangman");
   const popup1 = document.querySelector("#popup1");
+  const lives = document.querySelector("#lives");
   let status = false;
   let wrongLetters = 0;
   const spells = [
     "ALOHOMORA",
-    "AVADAKEDAVRA",
     "FERAVERTO",
     "LEVIOCA",
-    "DELUMINATOR",
     "WAND",
     "HOWLER",
     "REVEALER",
@@ -29,6 +25,14 @@ function init() {
     "HERMIONE",
     "POTTER",
     "DUMBLEDORE",
+    "MAGIC",
+    "WITCH",
+    "HOGWARTS",
+    "SPELLS",
+    "POTION",
+    "WIZARD",
+    "DRAGON",
+    "BROOM",
   ];
 
   /* -------------------------------handle the clicked letters--------------------------*/
@@ -57,9 +61,25 @@ function init() {
     console.log("dashh");
     showDash.innerHTML = spellJoin;
   }
-
-  // ---------------------------------output dashes----------------------------------
   spellsBtn.addEventListener("click", generateSpells);
+
+  const endText = document.querySelector("#endText");
+  const content = document.querySelector(".content");
+  // ---------------------------------Win and Lose-----------------------------
+  function gameOver() {
+    endText.innerHTML = "GAME OVER!";
+    content.innerHTML = "The word is " + spellChars.join("");
+    document.body.appendChild(popup1); //show popup
+    resetGame(); //reset everything
+  }
+  function win() {
+    endText.innerHTML = "YOU GUESSED ALL LETTERS";
+    content.innerHTML = "The word is " + spellChars.join("");
+    document.body.appendChild(popup1);
+    resetGame();
+  }
+  // ---------------------------------output dashes----------------------------------
+  let liveCount = 5;
   let checkArray = [];
   function compareLetter(letterC) {
     spellChars.forEach((char, key) => {
@@ -70,65 +90,50 @@ function init() {
         return spellDash[key];
       }
     });
-
     showDash.innerHTML = spellDash.join(" "); //output the correct selected letter to the dash
     console.log("spellChars");
     console.log(spellChars);
     console.log("check array");
     console.log(checkArray);
-    //console.log(showDash.innerHTML);
     console.log(status);
+
+    /* --------check the wrong letters--------------------*/
     if (status != true) {
       wrongLetters++;
-      hangman.classList.add(`letter-${wrongLetters}`); //add to the hangman class to display the hangman
+      liveCount--;
+      hangman.classList.add(`letter-${wrongLetters}`); //display the hangman
       document.querySelector("#wrong").play();
       if (wrongLetters === 5) {
         gameOver();
-      } else if (spellChars.length == checkArray.length) {
-        win();
+        checkArray.length = 0;
       }
     }
+    lives.innerHTML = `LIVES= ${liveCount}`;
+    document.body.appendChild(lives);
+    if (spellChars.length === checkArray.length) {
+      win();
+      checkArray.length = 0;
+    }
   }
-
   /* -------------------------------------reset game-----------------------------------------*/
   function resetGame() {
     letterBtn.forEach((btn) => {
       btn.classList.remove("clicked");
     });
-
     console.log(letterBtn);
     reset.disabled = true;
     showDash.textContent = "";
-
     hangman.classList.remove("letter-1");
     hangman.classList.remove("letter-2");
     hangman.classList.remove("letter-3");
     hangman.classList.remove("letter-4");
     hangman.classList.remove("letter-5");
     wrongLetters = 0;
+    lives.textContent = " ";
+    liveCount = 5;
   }
   reset.addEventListener("click", resetGame);
-
-  // ---------------------------------Win and Lose-----------------------------
-  const endText = document.querySelector("#endText");
-  const content = document.querySelector(".content");
-
-  function gameOver() {
-    endText.innerHTML = "GAME OVER!";
-    content.innerHTML = "The word is " + spellChars.join("");
-    document.body.appendChild(popup1); //show popup
-    resetGame(); //reset everything
-  }
-
-  function win() {
-    endText.innerHTML = "YOU GUESSED ALL LETTERS";
-    content.innerHTML = "The word is " + spellChars.join("");
-    document.body.appendChild(popup1);
-    resetGame();
-  }
-
   // ---------------------------------Background Sound-----------------------------
-
   const audio = document.querySelector("#audio");
   playTheme.addEventListener("click", (event) => {
     audio.src = "/Harry Potter Theme Song.mp3";
