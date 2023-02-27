@@ -7,6 +7,12 @@ Harry Potter Hangman is basically a hangman game with Harry Potter theme, where 
 
 
 ![2023-02-28](https://user-images.githubusercontent.com/114671518/221696519-da5f6092-d462-424d-887c-12434649e6c0.png)
---
+---
+##Languages
+used all frontend languages
+- Html
+- CSS
+- Javascript 
+
 
 
